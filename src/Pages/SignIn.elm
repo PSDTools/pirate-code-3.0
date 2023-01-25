@@ -32,12 +32,14 @@ type alias Model =
 init : () -> ( Model, Effect Msg )
 init () =
     let
+        initialModel : Model
         initialModel =
             { email = ""
             , password = ""
             , isSubmittingForm = False
             }
 
+        initialEffect : Effect msg
         initialEffect =
             Effect.batch
                 [ Effect.none

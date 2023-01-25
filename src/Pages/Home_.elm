@@ -28,9 +28,11 @@ type alias Model =
 init : ( Model, Cmd Msg )
 init =
     let
+        initialModel : Model
         initialModel =
             {}
 
+        initialCmd : Cmd msg
         initialCmd =
             Cmd.batch
                 [ Cmd.none

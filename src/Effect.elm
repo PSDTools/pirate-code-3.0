@@ -17,7 +17,7 @@ module Effect exposing
 
 -}
 
-import Browser.Navigation
+import Browser.Navigation as Nav
 import Dict exposing (Dict)
 import Route exposing (Route)
 import Route.Path
@@ -146,7 +146,7 @@ map fn effect =
 {-| Elm Land depends on this function to perform your effects.
 -}
 toCmd :
-    { key : Browser.Navigation.Key
+    { key : Nav.Key
     , url : Url
     , shared : Shared.Model.Model
     , fromSharedMsg : Shared.Msg.Msg -> msg
@@ -167,13 +167,13 @@ toCmd options effect =
             cmd
 
         PushUrl url ->
-            Browser.Navigation.pushUrl options.key url
+            Nav.pushUrl options.key url
 
         ReplaceUrl url ->
-            Browser.Navigation.replaceUrl options.key url
+            Nav.replaceUrl options.key url
 
         LoadExternalUrl url ->
-            Browser.Navigation.load url
+            Nav.load url
 
         SendSharedMsg sharedMsg ->
             Task.succeed sharedMsg

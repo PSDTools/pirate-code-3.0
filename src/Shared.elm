@@ -44,10 +44,12 @@ type alias Model =
 init : Result Json.Decode.Error Flags -> Route () -> ( Model, Effect Msg )
 init flagsResult route =
     let
+        initialModel : Model
         initialModel =
             { token = Nothing
             }
 
+        initialEffect : Effect msg
         initialEffect =
             Effect.batch
                 [ Effect.none
