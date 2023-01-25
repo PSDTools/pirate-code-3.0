@@ -1,0 +1,13 @@
+{
+  "include": ["src/**/*.ts"],
+  "compilerOptions": {
+    "lib": ["es6", "dom", "DOM.Iterable"],
+    "noEmit": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "isolatedModules": true
+  }
+}
